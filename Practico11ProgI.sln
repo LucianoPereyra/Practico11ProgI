@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejercicio2.Entidades", "Eje
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejercicio2.Windows", "Ejercicio2.Windows\Ejercicio2.Windows.csproj", "{1676EB9E-12D4-4742-96F8-AA38E2CEDEB0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejercicio2.Datos", "RepoProductos\Ejercicio2.Datos.csproj", "{CA3ED3CC-F6A3-40FB-B8A8-F6D9053C2BAA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,6 +45,10 @@ Global
 		{1676EB9E-12D4-4742-96F8-AA38E2CEDEB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1676EB9E-12D4-4742-96F8-AA38E2CEDEB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1676EB9E-12D4-4742-96F8-AA38E2CEDEB0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA3ED3CC-F6A3-40FB-B8A8-F6D9053C2BAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA3ED3CC-F6A3-40FB-B8A8-F6D9053C2BAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA3ED3CC-F6A3-40FB-B8A8-F6D9053C2BAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA3ED3CC-F6A3-40FB-B8A8-F6D9053C2BAA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -53,6 +59,7 @@ Global
 		{D0E0F244-D027-4485-8106-A8C1074A9E44} = {E4157C72-1BBC-4B0F-A475-CCDEB606E31E}
 		{456FD2C0-D190-4D11-96A9-B5091173C20D} = {709BEEC1-B11A-43A5-89F7-AD679454F1E0}
 		{1676EB9E-12D4-4742-96F8-AA38E2CEDEB0} = {709BEEC1-B11A-43A5-89F7-AD679454F1E0}
+		{CA3ED3CC-F6A3-40FB-B8A8-F6D9053C2BAA} = {709BEEC1-B11A-43A5-89F7-AD679454F1E0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B3848087-9D72-4EB9-B044-0B136889BE42}

@@ -16,5 +16,16 @@ namespace Ejercicio2.Windows
         {
             InitializeComponent();
         }
+
+        private void btnOk_Click(object sender, EventArgs e)
+        {
+            if (validarDatos())
+            {
+                if (Producto)
+                {
+
+                }
+            }
+        }
     }
 }

@@ -34,7 +34,8 @@ namespace Ejercicio2.Windows
 
         private void tsbAgregar_Click(object sender, EventArgs e)
         {
-
+            frmProductosAE frm = new frmProductosAE();
+            DialogResult dr = frm.ShowDialog(this);
         }
     }
 }
