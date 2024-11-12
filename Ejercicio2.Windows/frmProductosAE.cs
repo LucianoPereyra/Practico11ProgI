@@ -47,12 +47,30 @@ namespace Ejercicio2.Windows
         {
             bool valido = true;
 
-            if (string.IsNullOrEmpty(txtcodBarra.Text) ||
-                string.IsNullOrEmpty(cboNombreProducto.Text) ||
-                string.IsNullOrEmpty(txtPrecio.Text) ||
-                cboCategoria.SelectedIndex == -1)
+            int codBarra;
+            if (!int.TryParse(txtcodBarra.Text, out codBarra) || codBarra <= 0)
+                
             {
                 valido = false;
+                errorProvider1.SetError(txtcodBarra, "Codigo de barra mal ingresado");
+            }
+            if (string.IsNullOrEmpty(cboNombreProducto.Text))
+            {
+                valido = false;
+                errorProvider1.SetError(cboNombreProducto, "Nombre del producto mal ingresado");
+            }
+
+            int precio;
+
+            if (!int.TryParse(txtPrecio.Text, out precio) || precio <= 0)
+            {
+                valido = false;
+                errorProvider1.SetError(txtPrecio, "El precio fue mal ingresado o es negativo");
+            }
+            if (cboCategoria.SelectedIndex == -1)
+            {
+                valido = false;
+                errorProvider1.SetError(cboCategoria, "Categoria mal seleccionada");
             }
 
             return valido;
