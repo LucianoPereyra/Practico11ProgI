@@ -43,21 +43,39 @@ namespace Ejercicio2.Windows
             }
         }
 
+
         private bool validarDatos()
         {
             bool valido = true;
 
-            int codBarra;
-            if (!int.TryParse(txtcodBarra.Text, out codBarra) || codBarra <= 0)
-                
+            errorProvider1.Clear();
+
+
+            if (!validarCodigoBarra(txtcodBarra.Text))
+
             {
                 valido = false;
-                errorProvider1.SetError(txtcodBarra, "Codigo de barra mal ingresado");
+                errorProvider1.SetError(txtcodBarra, "El codigo deebe tener 10 numeros");
             }
-            if (string.IsNullOrEmpty(cboNombreProducto.Text))
+
+            else
             {
-                valido = false;
-                errorProvider1.SetError(cboNombreProducto, "Nombre del producto mal ingresado");
+                if (repo.GetProductos()!.Any(c => c.CodigoProducto == int.Parse(txtcodBarra.Text)))
+                {
+                    valido = false;
+                    errorProvider1.SetError(txtcodBarra, "El codigo introducido ya existe");
+                }
+
+
+
+                if (string.IsNullOrEmpty(cboNombreProducto.Text))
+                {
+                    valido = false;
+                    errorProvider1.SetError(cboNombreProducto, "Nombre del producto mal ingresado");
+                }
+
+                return valido = true;
+
             }
 
             int precio;
@@ -76,6 +94,26 @@ namespace Ejercicio2.Windows
             return valido;
         }
 
+
+
+        private bool validarCodigoBarra(string codBarra)
+        {
+            if (codBarra.Length < 10)
+            {
+                return false;
+            }
+
+            if (!int.TryParse(codBarra, out _))
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+
+
+
         private void frmProductosAE_Load(object sender, EventArgs e)
         {
             CargarDatosComboCategorias(ref cboCategoria);
@@ -88,5 +126,15 @@ namespace Ejercicio2.Windows
             cboCategoria.SelectedIndex = 0;
             cboCategoria.DropDownStyle = ComboBoxStyle.DropDownList;
         }
+
     }
+
 }
+
+
+
+
+
+
+
+
