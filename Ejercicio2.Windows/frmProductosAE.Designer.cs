@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
@@ -40,6 +41,8 @@
             cboNombreProducto = new ComboBox();
             btnOk = new Button();
             btnCancel = new Button();
+            errorProvider1 = new ErrorProvider(components);
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -54,7 +57,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(5, 9);
+            label2.Location = new Point(5, 54);
             label2.Name = "label2";
             label2.Size = new Size(119, 15);
             label2.TabIndex = 1;
@@ -72,7 +75,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(5, 46);
+            label4.Location = new Point(5, 16);
             label4.Name = "label4";
             label4.Size = new Size(58, 15);
             label4.TabIndex = 3;
@@ -105,7 +108,7 @@
             // 
             cboCategoria.FormattingEnabled = true;
             cboCategoria.Items.AddRange(new object[] { "Arroz", "Pasta", "Carne", "Bebidas", "Aceites", "Snacks" });
-            cboCategoria.Location = new Point(66, 43);
+            cboCategoria.Location = new Point(69, 13);
             cboCategoria.Name = "cboCategoria";
             cboCategoria.Size = new Size(121, 23);
             cboCategoria.TabIndex = 9;
@@ -123,7 +126,7 @@
             // 
             cboNombreProducto.FormattingEnabled = true;
             cboNombreProducto.Items.AddRange(new object[] { "Gallo(Arroz)", "LucchettiArroz)", "Vicente(Pasta)", "Matarazzo(Pasta)", "Vacuna(Carne)", "Porcina(Carne)", "Coca Cola(Bebidas)", "Fanta(Bebidas)", "Marolio(Aceites)", "Natura(Aceites)", "Saladix(Snacks)", "Lays(Snacks)" });
-            cboNombreProducto.Location = new Point(130, 6);
+            cboNombreProducto.Location = new Point(130, 51);
             cboNombreProducto.Name = "cboNombreProducto";
             cboNombreProducto.Size = new Size(121, 23);
             cboNombreProducto.TabIndex = 11;
@@ -147,6 +150,10 @@
             btnCancel.Text = "Cancel";
             btnCancel.UseVisualStyleBackColor = true;
             // 
+            // errorProvider1
+            // 
+            errorProvider1.ContainerControl = this;
+            // 
             // frmProductosAE
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -166,6 +173,8 @@
             Controls.Add(label1);
             Name = "frmProductosAE";
             Text = "frmProductosAE";
+            Load += frmProductosAE_Load;
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -184,5 +193,6 @@
         private ComboBox cboNombreProducto;
         private Button btnOk;
         private Button btnCancel;
+        private ErrorProvider errorProvider1;
     }
 }

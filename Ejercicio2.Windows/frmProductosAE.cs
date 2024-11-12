@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Ejercicio2.Datos;
+using Ejercicio2.Entidades;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,20 +14,61 @@ namespace Ejercicio2.Windows
 {
     public partial class frmProductosAE : Form
     {
-        public frmProductosAE()
+        private Producto? producto;
+        private RepositorioProductos? repo;
+        public frmProductosAE(RepositorioProductos repo)
         {
             InitializeComponent();
+            this.repo = repo;
         }
 
         private void btnOk_Click(object sender, EventArgs e)
         {
             if (validarDatos())
             {
-                if (Producto)
+                if (producto is null)
                 {
-
+                    producto = new Producto();
                 }
+
+                // Asignar los valores de los controles del formulario al objeto Producto
+                producto.CodigoProducto = int.Parse(txtcodBarra.Text);
+                producto.DescripcionProducto = cboNombreProducto.Text;
+                producto.CantidadProducto = (int)cboCantidad.SelectedItem;
+                producto.PrecioProducto = int.Parse(txtPrecio.Text);
+                producto.categoriaProducto = (CategoriaProducto)Enum.Parse(typeof(CategoriaProducto), cboCategoria.SelectedItem.ToString());
+
+                DialogResult = DialogResult.OK;
+                Close();
             }
+        }
+
+        private bool validarDatos()
+        {
+            bool valido = true;
+
+            if (string.IsNullOrEmpty(txtcodBarra.Text) ||
+                string.IsNullOrEmpty(cboNombreProducto.Text) ||
+                string.IsNullOrEmpty(txtPrecio.Text) ||
+                cboCategoria.SelectedIndex == -1)
+            {
+                valido = false;
+            }
+
+            return valido;
+        }
+
+        private void frmProductosAE_Load(object sender, EventArgs e)
+        {
+            CargarDatosComboCategorias(ref cboCategoria);
+        }
+
+        private void CargarDatosComboCategorias(ref ComboBox cboCategoria)
+        {
+            var categorias = Enum.GetValues(typeof(CategoriaProducto));
+            cboCategoria.DataSource = categorias;
+            cboCategoria.SelectedIndex = 0;
+            cboCategoria.DropDownStyle = ComboBoxStyle.DropDownList;
         }
     }
 }

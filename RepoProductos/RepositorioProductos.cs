@@ -1,12 +1,12 @@
 ﻿using Ejercicio2.Entidades;
 
-namespace RepoProductos
+namespace Ejercicio2.Datos
 {
-    public class RepositorioDeProductos
+    public class RepositorioProductos
     {
         private List<Producto>? productos;
 
-        public RepositorioDeProductos()
+        public RepositorioProductos()
         {
             productos = new List<Producto>();
         }

@@ -8,7 +8,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Ejercicio2.Entidades\Ejercicio2.Entidades.csproj" />
-    <ProjectReference Include="..\Ejercicio2.Windows\Ejercicio2.Windows.csproj" />
   </ItemGroup>
 
 </Project>

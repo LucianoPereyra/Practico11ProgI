@@ -6,8 +6,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Ejercicio2.Windows\Ejercicio2.Windows.csproj" />
-  </ItemGroup>
-
 </Project>

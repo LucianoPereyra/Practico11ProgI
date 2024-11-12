@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Ejercicio2.Datos;
+using Ejercicio2.Entidades;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +14,9 @@ namespace Ejercicio2.Windows
 {
     public partial class frmProductos : Form
     {
+
+        private RepositorioProductos? repo;
+
         public frmProductos()
         {
             InitializeComponent();
@@ -34,7 +39,7 @@ namespace Ejercicio2.Windows
 
         private void tsbAgregar_Click(object sender, EventArgs e)
         {
-            frmProductosAE frm = new frmProductosAE();
+            frmProductosAE frm = new frmProductosAE(repo);
             DialogResult dr = frm.ShowDialog(this);
         }
     }
